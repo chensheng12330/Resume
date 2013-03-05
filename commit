@@ -1,0 +1,25 @@
+#! /bin/sh
+if [ -n "$1" ]; then echo "";
+else echo "please commit log....."; exit 1
+fi
+
+#proceing
+echo "\n********pull all files*******"
+git pull
+echo "********pull finishing*******\n"
+
+
+echo "\n********add all files*******"
+git add *
+echo "********add finishing*******\n"
+
+echo "\n********commit all files*******"
+git commit -m "$1"
+echo "********commit finishing*******\n"
+
+echo "\n********push all files*******"
+git push -u origin master
+echo "********push finishing*******\n"
+
+
+git log -n 1
